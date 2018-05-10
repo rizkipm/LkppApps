@@ -1,6 +1,10 @@
 package superheroku.id.co.lkppapps.network;
 
 
+import retrofit2.Call;
+import retrofit2.http.GET;
+import superheroku.id.co.lkppapps.model.LkppResponse;
+
 /**
  * Created by Blackswan on 9/12/2017.
  */
@@ -8,9 +12,9 @@ package superheroku.id.co.lkppapps.network;
 public interface RestApi {
 
 
-//
-//    @GET("menu/json")
-//    Call<RssJ134Slider> getMenuHome();
+
+    @GET("pengumumanruptahunan2018/tipe/4:12/parameter/2018:D444")
+    Call<LkppResponse> getData();
 
 
 

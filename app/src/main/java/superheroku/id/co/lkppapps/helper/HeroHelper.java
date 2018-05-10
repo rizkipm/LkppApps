@@ -49,7 +49,7 @@ import java.util.regex.Pattern;
 public class HeroHelper {
     private static final int DEBUG = 1;
     public static final String APP = "ima-transfoodeApps";
-    public static final String BASE_URL = "http://profil.smsberjaya.id/index.php/api/";
+    public static final String BASE_URL = "https://inaproc.lkpp.go.id/isb/api/41528eb9-8bc0-49a7-b4fe-a25c8b7c9c38/json/17814424/";
 
     //    public static final String BASE_URL = "http://layanan-awan.com/absen/absen_android/index.php/Api/";
     //    public static final String BASE_URL = "http://admin.transfood-batam.com/index.php/API/";

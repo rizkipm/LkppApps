@@ -51,7 +51,7 @@ import java.util.regex.Pattern;
 public class VolunterHelper {
     private static final int DEBUG = 1;
     public static final String APP = "ima-volunterwonder";
-    public static final String BASE_URL = "http://api.imadeveloper.web.id/wonder_projects/";
+    public static final String BASE_URL = "https://inaproc.lkpp.go.id/isb/api/41528eb9-8bc0-49a7-b4fe-a25c8b7c9c38/json/17814424/";
     public static final String GOOGLEMAP_URL = "https://maps.googleapis.com/maps/api/directions/";
     public static final String BASE_URL_IMAGE = "http://192.168.100.9/ServerKolaka/img/";
 
