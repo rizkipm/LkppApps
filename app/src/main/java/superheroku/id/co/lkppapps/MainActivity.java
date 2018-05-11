@@ -2,7 +2,8 @@ package superheroku.id.co.lkppapps;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,16 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
     public static List<LkppResponse> dataItemJ23RiwayatLelangs;
 
-    @BindView(R.id.recyclerView)
-    RecyclerView recyclerView;
+
+    @BindView(R.id.txtNamaIndikator)
+    TextView txtNamaIndikator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.item_data);
         ButterKnife.bind(this);
         dataItemJ23RiwayatLelangs = new ArrayList<>();
-
 
 
         getListData();
@@ -45,22 +46,27 @@ public class MainActivity extends AppCompatActivity {
             call.enqueue(new Callback<LkppResponse>() {
                 @Override
                 public void onResponse(Call<LkppResponse> call, Response<LkppResponse> response) {
-//                    Log.d("onResponse", response.body().toString());
+                    Log.d("onResponse", response.body().toString());
+
+//                    for (int i = 0; i < dataItemJ23RiwayatLelangs.size(); i++) {
+////                        txtNamaIndikator.setText(dataItemJ23RiwayatLelangs.get(i).getNamaPaket());
+//                        Toast.makeText(getApplicationContext(), dataItemJ23RiwayatLelangs.get(i).getAkhirPekerjaan(),
+//                                Toast.LENGTH_LONG).show();
+//
+//                    }
 
 
-
-
-//                    layoutManager = new LinearLayoutManager(getApplicationContext());
-//                        AdapterMenuKategoriPimpinan recyclerViewAdapter =
-//                                new AdapterMenuKategoriPimpinan(dataItemJ23RiwayatLelangs, MenuKategoriPimpinan.this);
-//                        recyclerView.setLayoutManager(new LinearLayoutManager(MenuKategoriPimpinan.this));
+//                    dataItemJ23RiwayatLelangs = Collections.singletonList(response.body());
+////
+////                    layoutManager = new LinearLayoutManager(getApplicationContext());
+//                    AdapterData recyclerViewAdapter =
+//                            new AdapterData(dataItemJ23RiwayatLelangs, MainActivity.this);
+//                    recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 //
 ////                    recyclerView.setLayoutManager(layoutManager);
 //////                        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
 //
-//                        recyclerView.setAdapter(recyclerViewAdapter);
-
-
+//                    recyclerView.setAdapter(recyclerViewAdapter);
 
 
                 }

@@ -1,6 +1,5 @@
 package superheroku.id.co.lkppapps.adapter;
 
-import android.content.Intent;
 import android.database.DataSetObserver;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.CardView;
@@ -42,7 +41,7 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.MyHolder> impl
 
     @Override
     public void onBindViewHolder(MyHolder holder, final int position) {
-//        holder.txJudul.setText(data.get(position).getNamaKategoriPimpinan());
+        holder.txJudul.setText(data.get(position).getNamaPaket());
 
 
 //        holder.card.setOnClickListener(new View.OnClickListener() {
@@ -123,10 +122,10 @@ public class AdapterData extends RecyclerView.Adapter<AdapterData.MyHolder> impl
 
         public MyHolder(View itemView) {
             super(itemView);
+
+            txJudul = (TextView) itemView.findViewById(R.id.txtNamaIndikator);
 //
-//            txJudul = (TextView) itemView.findViewById(R.id.txtNamaIndikator);
-////
-//            card = itemView.findViewById(R.id.cardHome);
+            card = itemView.findViewById(R.id.cardHome);
 
 
 
