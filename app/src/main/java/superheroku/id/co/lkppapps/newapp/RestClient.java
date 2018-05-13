@@ -25,7 +25,7 @@ public class RestClient {
 
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl("https://inaproc.lkpp.go.id/isb/api/41528eb9-8bc0-49a7-b4fe-a25c8b7c9c38/")
-                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .addConverterFactory(GsonConverterFactory.create())
                     .client(httpClient.build()).build();
 
             service = retrofit.create(service.class);
@@ -33,3 +33,8 @@ public class RestClient {
         return service;
     }
 }
+//
+//    Retrofit retrofit = new Retrofit.Builder()
+//            .baseUrl("https://inaproc.lkpp.go.id/isb/api/41528eb9-8bc0-49a7-b4fe-a25c8b7c9c38/")
+//            .addConverterFactory(GsonConverterFactory.create(gson))
+//            .client(httpClient.build()).build();
