@@ -6,12 +6,15 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import superheroku.id.co.lkppapps.R;
+import superheroku.id.co.lkppapps.adapter.DataAdapter;
 
 public class NewApp2Main extends AppCompatActivity {
 
@@ -33,24 +36,22 @@ public class NewApp2Main extends AppCompatActivity {
     }
 
     private void loadSize() {
-        service serviceAPI = RestClient.getClient();
-        Call<List<ResponNewLkppResponse>> loadSizeCall = serviceAPI.loadSizes();
-        loadSizeCall.enqueue(new Callback<List<ResponNewLkppResponse>>() {
+        service sr = RestClient.getClient();
+        Call<ResponNewLkppResponse> call = sr.loadSizes();
+        call.enqueue(new Callback<ResponNewLkppResponse>() {
             @Override
-            public void onResponse(Call<List<ResponNewLkppResponse>> call, Response<List<ResponNewLkppResponse>> response) {
-                Log.d("data",  "Kode :" + response.body());
-//                Log.d("Tag","Cek Data :"+new Gson().toJson(data));
+            public void onResponse(Call<ResponNewLkppResponse> call, Response<ResponNewLkppResponse> response) {
+                List<NewLkppResponse> data = response.body().getList();
+                Log.d("cek data","data"+new Gson().toJson(data));
 
-                List<ResponNewLkppResponse> data = response.body();
-//                Toast.makeText(getApplicationContext(), "Body", Toast.LENGTH_LONG).show();
-//                // Set response Books as listed layout
-//                DataAdapter booksAdapter = new DataAdapter(getBaseContext(), R.layout.data_layout, (ArrayList<NewLkppResponse>) data);
-//                listView.setAdapter(booksAdapter);
+                DataAdapter booksAdapter = new DataAdapter(getBaseContext(), R.layout.data_layout, data);
+                listView.setAdapter(booksAdapter);
+
             }
 
             @Override
-            public void onFailure(Call<List<ResponNewLkppResponse>> call, Throwable t) {
-                System.out.println(t.getMessage());
+            public void onFailure(Call<ResponNewLkppResponse> call, Throwable t) {
+
             }
         });
     }

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import superheroku.id.co.lkppapps.R;
 import superheroku.id.co.lkppapps.newapp.NewLkppResponse;
@@ -24,10 +24,10 @@ public class DataAdapter extends ArrayAdapter<NewLkppResponse> {
     public static final String DELETE_BOOK_FAILED_PLEASE_CHECK_THE_LOG = "DELETE Book Failed, please check the log.";
     public static final String EXCEPTION = "Exception: ";
 
-    private ArrayList<NewLkppResponse> books;
+    private List<NewLkppResponse> books;
     private int layoutResource;
 
-    public DataAdapter(Context context, int layoutResource, ArrayList<NewLkppResponse> books) {
+    public DataAdapter(Context context, int layoutResource, List<NewLkppResponse> books) {
         super(context, android.R.layout.simple_list_item_2, books);
         this.layoutResource = layoutResource;
         this.books = books;
